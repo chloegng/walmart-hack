@@ -4,12 +4,11 @@ const apiKey = "rbrurt3zgvpzkd2gtxhprat5"
 const walmartAPI = "api.walmartlabs.com"
 const http = require('http')
 
-app.get('/getItem', function (req, res) {
+app.get('/getItem/:itemKey', function (req, res) {
   var options = {
     host: walmartAPI,
-    path: "/v1/items/45804384?apiKey="+apiKey+"&format=json"
+    path: "/v1/items/"+req.params.itemKey+"?apiKey="+apiKey+"&format=json"
   }
-  console.log(options.path);
 
   var request = http.get(options, function(response) {
     var bodyChunks =[];
@@ -18,7 +17,8 @@ app.get('/getItem', function (req, res) {
       bodyChunks.push(chunk);
     }).on('end', function() {
       var body = Buffer.concat(bodyChunks);
-      console.log('BODY' + body);
+//      console.log('BODY' + body);
+      res.type('application/json');
       res.send(body);
     })
 
