@@ -12,18 +12,6 @@ body {
 	margin: 1.66% auto;
 }
 <<<<<<< HEAD
-=======
-
-#productName {
-
-
-}
-
-#productPrice {
-	
-}
-<<<<<<< HEAD
->>>>>>> 3a30cdd8edb46077ca7da136a491d8205ec09070
 
 #myInput {
     background-image: url('search.png'); /* Add a search icon to input */
@@ -62,4 +50,5 @@ body {
 
 #List li a:hover:not(.header) {
     background-color: #eee; /* Add a hover effect to all links, except for headers */
-	}
+=======
+>>>>>>> 009c1e1a85c32221eb10bb950a04fb295afa44a6
