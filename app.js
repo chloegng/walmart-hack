@@ -69,8 +69,6 @@ app.get('/getItem/:itemKey', function(req, res) {
             item.freeShippingOver50Dollars = jsonRes.freeShippingOver50Dollars;
             item.imageEntities = jsonRes.imageEntities;
 
-
-
             res.type('application/json');
             res.send(item);
         })
@@ -114,7 +112,7 @@ function getItems(req, callback) {
               temp.name = item.name;
               temp.salePrice = item.salePrice;
               temp.msrp = item.msrp;
-              temp.shortDescription = item.shortDescription;
+              temp.shortDescription = cleanDescription(item.shortDescription);
               temp.brandName = item.brandName;
               temp.thumbnailImage = item.thumbnailImage;
               temp.mediumImage = item.mediumImage;
@@ -142,6 +140,21 @@ function getItems(req, callback) {
     })
 
     return null;
+}
+
+function cleanDescription(desc) {
+  if(typeof desc != 'undefined' && desc != null && desc.length > 0) {
+    desc = desc.replace('&lt;p&gt;', '');
+    desc = desc.replace('&lt;/p&gt;', '');
+
+    if(desc.length > 120) {
+      desc = desc.substring(0, 116) + '...';
+    }
+  } else {
+    desc = "No Description Available";
+  }
+
+  return desc;
 }
 
 function sendText(message, phoneNumber)
