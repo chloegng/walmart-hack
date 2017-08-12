@@ -14,7 +14,7 @@ var twilio = require('twilio');
 var twilioClient = twilio(twilioAccountSid, twilioAuthToken);
 
 var jarrenNumber = "+19518949217";
-
+var nickNumber = "+7143315393";
 
 app.use(express.static(__dirname + '/public'));
 
@@ -68,6 +68,8 @@ app.get('/getItem/:itemKey', function(req, res) {
             item.customerRatingImage = jsonRes.customerRatingImage;
             item.freeShippingOver50Dollars = jsonRes.freeShippingOver50Dollars;
             item.imageEntities = jsonRes.imageEntities;
+
+
 
             res.type('application/json');
             res.send(item);
@@ -123,6 +125,13 @@ function getItems(req, callback) {
               temp.customerRatingImage = item.customerRatingImage;
               temp.freeShippingOver50Dollars = item.freeShippingOver50Dollars;
               temp.imageEntities = item.imageEntities;
+
+
+              // function to sendText to registeredUsers on DB
+              //if item is beig sold less than msrp, text users that want to know
+              if(item.salePrice < item.msrp){
+                sendText("selling for less than msrp" + item.name, jarrenNumber);
+              }
 
               items.push(temp);
           });
