@@ -24,45 +24,13 @@
 		  <li><a href="#">Video Games</a></li>
 		</ul>
 
+<% items.forEach(function(item) { %>
 		<div id="container">
-		  <div class="square"></div>
+		  <div class="square">
+        <%= item.name %>
+      </div>
 		</div>
-
-		<div id="container">
-		  <div class="square"></div>
-		</div>
-
-		<div id="container">
-		  <div class="square"></div>
-		</div>
-
-		<div id="container">
-		  <div class="square"></div>
-		</div>
-
-		<div id="container">
-		  <div class="square"></div>
-		</div>
-
-		<div id="container">
-		  <div class="square"></div>
-		</div>
-
-		<div id="container">
-		  <div class="square"></div>
-		</div>
-
-		<div id="container">
-		  <div class="square"></div>
-		</div>
-
-		<div id="container">
-		  <div class="square"></div>
-		</div>
-
-		<div id="container">
-		  <div class="square"></div>
-		</div>
+<% }); %>
 
 </body>
 </html>
