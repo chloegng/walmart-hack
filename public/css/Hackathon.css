@@ -7,26 +7,42 @@ body {
 }
 .square {
 	width: 50%;
-	background: #D3D3D3;
+	background: #0;
 	padding-bottom: 30%;
 	margin: 1.66% auto;
 }
 
 .productName {
-
+	font-family: "roboto", sans-serif;
+	font-size: 30px;
+	font-style: normal;
 }
 
 .salePrice {
+	font-size: 25px;
 
 }
 
 .mediumImage {
+	float: left;
 
+}
+.customerRatingImage {
+	float: none;
 }
 
 .shortDescription{
+	font-family: "roboto",sans-serif;
+	font-size: 12px;
 
 }
+
+.review {
+	font-family: "roboto";
+	font-size: 12px;
+}
+
+
 
 #myInput {
     background-image: url('search.png'); /* Add a search icon to input */
