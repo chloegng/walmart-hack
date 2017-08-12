@@ -4,6 +4,14 @@ const apiKey = "rbrurt3zgvpzkd2gtxhprat5"
 const walmartAPI = "api.walmartlabs.com"
 const http = require('http')
 
+app.use(express.static(__dirname + '/public'));
+
+app.set('view engine', 'ejs');
+
+app.get('/', function(req, res) {
+    res.render('index');
+});
+
 // Get individual item by itemKey
 app.get('/getItem/:itemKey', function (req, res) {
   var options = {
