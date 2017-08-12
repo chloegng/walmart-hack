@@ -128,7 +128,8 @@ function getItems(req, callback) {
               // function to sendText to registeredUsers on DB
               //if item is beig sold less than msrp, text users that want to know
               if(item.salePrice < item.msrp){
-                sendText("selling for less than msrp" + item.name, jarrenNumber);
+                var message = item.name + " is selling at " + item.salePrice + " which is less than MSRP of " + item.msrp;
+                sendText(message, jarrenNumber);
               }
 
               items.push(temp);
