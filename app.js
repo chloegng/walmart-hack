@@ -4,6 +4,18 @@ const apiKey = "rbrurt3zgvpzkd2gtxhprat5"
 const walmartAPI = "api.walmartlabs.com"
 const http = require('http')
 
+
+var twilio = require('twilio');
+
+var twilioAccountSid = "AC0f9f3128f739dda1853bcad74bc6b576";
+var twilioAuthToken = "578dc02fbe0a1993539def066a24c38b";
+
+var twilio = require('twilio');
+var twilioClient = twilio(twilioAccountSid, twilioAuthToken);
+
+var jarrenNumber = "+19518949217";
+var nickNumber = "+7143315393";
+
 app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs');
@@ -56,6 +68,8 @@ app.get('/getItem/:itemKey', function(req, res) {
             item.customerRatingImage = jsonRes.customerRatingImage;
             item.freeShippingOver50Dollars = jsonRes.freeShippingOver50Dollars;
             item.imageEntities = jsonRes.imageEntities;
+
+
 
             res.type('application/json');
             res.send(item);
@@ -112,6 +126,13 @@ function getItems(req, callback) {
               temp.freeShippingOver50Dollars = item.freeShippingOver50Dollars;
               temp.imageEntities = item.imageEntities;
 
+
+              // function to sendText to registeredUsers on DB
+              //if item is beig sold less than msrp, text users that want to know
+              if(item.salePrice < item.msrp){
+                sendText("selling for less than msrp" + item.name, jarrenNumber);
+              }
+
               items.push(temp);
           });
           jsonRes.items = items;
@@ -122,6 +143,16 @@ function getItems(req, callback) {
 
     return null;
 }
+
+function sendText(message, phoneNumber)
+{
+    twilioClient.messages.create({
+        body: message,
+        to: phoneNumber,
+        from: '+18582810718'
+    }).then((message) => console.log(message.sid));
+}
+
 
 app.listen(3000, function() {
     console.log('Example app listening on port 3000!')
