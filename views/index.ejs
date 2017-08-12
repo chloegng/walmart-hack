@@ -27,9 +27,9 @@
 <% items.forEach(function(item) { %>
 		<div id="container">
 		  <div class="square">
-              <h1 id = "productName"> NAME <%= item.name %> </h1>
-              <h2 id = "productPrice"> PRICE <%= item.productPrice %></h2>
-              <img id = "mediumImage" src = "<%= item.mediumImage %>">
+              <h1 class = "productName"> NAME <%= item.name %> </h1>
+              <h2 class = "productPrice"> PRICE <%= item.productPrice %></h2>
+              <img class = "mediumImage" src = "<%= item.mediumImage %>">
           </div>
 		</div>
 <% }); %>
