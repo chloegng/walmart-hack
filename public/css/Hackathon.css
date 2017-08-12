@@ -11,19 +11,22 @@ body {
 	padding-bottom: 30%;
 	margin: 1.66% auto;
 }
-<<<<<<< HEAD
-=======
 
-#productName {
-
+.productName {
 
 }
 
-#productPrice {
-	
+.salePrice {
+
 }
-<<<<<<< HEAD
->>>>>>> 3a30cdd8edb46077ca7da136a491d8205ec09070
+
+.mediumImage {
+
+}
+
+.shortDescription{
+
+}
 
 #myInput {
     background-image: url('search.png'); /* Add a search icon to input */
