@@ -1,1 +1,1 @@
-alert("CONNNECTED!");
+alert ("test");
