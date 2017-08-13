@@ -5,6 +5,12 @@ const app = express();
 const apiKey = "rbrurt3zgvpzkd2gtxhprat5";
 const walmartAPI = "api.walmartlabs.com";
 
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/phoneNumbers');
+// schema for users that want text notifications when price drops below msrp
+// name
+// number
+// category they want to be enrolled in 
 
 var twilio = require('twilio');
 
@@ -166,7 +172,7 @@ function sendText(message, phoneNumber) {
     twilioClient.messages.create({
         body: message,
         to: phoneNumber,
-        from: '+18582810718'
+        from: '+18582810718' // twilio phone number
     }).then((message) => console.log(message.sid));
 }
 
