@@ -5,12 +5,12 @@ const app = express();
 const apiKey = "rbrurt3zgvpzkd2gtxhprat5";
 const walmartAPI = "api.walmartlabs.com";
 
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/phoneNumbers');
+//var mongoose = require('mongoose');
+//mongoose.connect('mongodb://localhost/phoneNumbers');
 // schema for users that want text notifications when price drops below msrp
 // name
 // number
-// category they want to be enrolled in 
+// category they want to be enrolled in
 
 var twilio = require('twilio');
 
@@ -157,8 +157,8 @@ function cleanDescription(desc) {
       desc = desc.replace('&lt;p&gt;', '');
       desc = desc.replace('&lt;/p&gt;', '');
 
-      if(desc.length > 300) {
-        desc = desc.substring(0, 296) + '...';
+      if(desc.length > 200) {
+        desc = desc.substring(0, 197) + '...';
       }
     }
   } else {
