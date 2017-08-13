@@ -27,17 +27,16 @@
 <% items.forEach(function(item) { %>
 		<div id="container">
 		  <div class="square">
-
-              <h1 class = "productName"> <%= item.name %> </h1>
-              <h2 class = "salePrice"> <%= item.salePrice %></h2>
-              <img class = "mediumImage" src = "<%= item.mediumImage %>">
-              <p class = "shortDescription"> <%= unescape(item.shortDescription) %> </p>
-              <p class = "reviewInfo">
+              <h1 id = "productName"> NAME: <%= item.name %> </h1>
+              <h2 id = "salePrice"> PRICE: <%= item.salePrice %></h2>
+              <img id = "mediumImage" src = "<%= item.mediumImage %>">
+              <p id = "shortDescription"> <%= item.shortDescription %> </p>
+              <p id = "reviewInfo">
                   Number of Reviews </br> <%= item.numReviews %>
               </br>
                   Customer Rating </br> <%= item.customerRating %>
               </p>
-              <img class = "customerRatingImage" src = "<%= item.customerRatingImage %>">
+              <img id = "customerRatingImage" src = "<%= item.customerRatingImage %>">
           </div>
 		</div>
 <% }); %>
