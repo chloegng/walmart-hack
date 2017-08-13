@@ -5,13 +5,21 @@ body {
 .button {
 	float: left;
 }
+
+header {
+	background-color: white;
+  margin-bottom: 20px;
+}
+
 .square {
 	width: 50%;
 	background: white;
-	padding-bottom: 15%;
-	padding-left: 5%;
+	padding-bottom: 50px;
+	padding-left: 20px;
 	padding-right: 5%;
-	margin: 1.66% auto;
+	margin: 0px auto 10px auto;
+	border-radius: 15px;
+	padding-top: 2px;
 }
 
 .productName {
@@ -49,25 +57,26 @@ body {
 	font-size: 12px;
 }
 
-
-
 #myInput {
-    background-image: url('search.png'); /* Add a search icon to input */
-    background-position: 10px 12px; /* Position the search icon */
-    background-repeat: no-repeat; /* Do not repeat the icon image */
-    width: 100%; /* Full-width */
-    font-size: 16px; /* Increase font-size */
-    padding: 12px 20px 12px 40px; /* Add some padding */
-    border: 1px solid #ddd; /* Add a grey border */
-    margin-bottom: 12px; /* Add some space below the input */
+	background-image: url(search.png);
+	background-position: 10px 12px;
+	background-repeat: no-repeat;
+	background-size: 15px;
+	width: 100%;
+	font-size: 16px;
+	padding: 12px 20px 12px 40px;
+	border: 1px solid #ddd;
+	margin-bottom: 12px;
 }
 
 #List {
     /* Remove default list styling */
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
 		font-family: "Roboto",sans-serif;
+		float: left;
+		width: 250px;
 }
 
 #List li a {

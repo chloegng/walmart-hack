@@ -4,15 +4,11 @@
 	  <link rel="stylesheet" type="text/css" href="/css/Hackathon.css">
   </head>
   <body>
-
-    <div>
-      <button id = "sortbyRating">Rating</button>
-      <button id = "sortByTrending">Trending</button>
-      <button id = "sortByPrice">Price</button>
-    </div>
-
-    <!--search filter-->
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Categories...">
+    <header>
+      <img src="https://lh3.googleusercontent.com/-MSD8ikYtjSw/WY-qgUtYBqI/AAAAAAAAASE/3R9IbgCRCx0p6rSrV6ElAjoOaxeL3cLGACL0BGAYYCw/h501/logonick_01.jpg" alt="N.I.C.K. Logo" style="height: 250; margin: auto; display: block;"/>
+      <!-- <img src="https://lh3.googleusercontent.com/-Zn4kkZr3Ge0/WY-MNqqS8pI/AAAAAAAAAQo/GWg0cxQkA_sG_FYYZ_6F10DBqFfOSn4AwCK8BGAs/s360/nick.gif" alt="Team N.I.C.K." style="width: 50; height: 50;"/> -->
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Categories...">
+    </header>
 
 		<ul id="List">
 		  <li><a href="#" class="header">Electronics</a></li>
@@ -24,23 +20,22 @@
 		  <li><a href="#">Video Games</a></li>
 		</ul>
 
-<% items.forEach(function(item) { %>
-		<div id="container">
-		  <div class="square">
-              <h1 id = "productName"> NAME: <%= item.name %> </h1>
-              <h2 id = "salePrice"> PRICE: <%= item.salePrice %></h2>
-              <img id = "mediumImage" src = "<%= item.mediumImage %>">
-              <p id = "shortDescription"> <%= item.shortDescription %> </p>
-              <p id = "reviewInfo">
-                  Number of Reviews </br> <%= item.numReviews %>
-              </br>
-                  Customer Rating </br> <%= item.customerRating %>
-              </p>
-              <img id = "customerRatingImage" src = "<%= item.customerRatingImage %>">
-          </div>
-		</div>
-<% }); %>
-
-
+    <div id="container">
+        <% items.forEach(function(item) { %>
+  		  <div class="square">
+            <h1 class="productName"><%= item.name %> </h1>
+            <h2 class="salePrice">$<%= item.salePrice %></h2>
+            <img class="mediumImage" src="<%= item.thumbnailImage %>">
+            <p class= "shortDescription"><%= item.shortDescription %></p>
+            <p class="reviewInfo">
+                Number of Reviews </br> <%= item.numReviews %>
+            </br>
+                Customer Rating </br> <%= item.customerRating %>
+            </p>
+            <img class="customerRatingImage" src="<%= item.customerRatingImage %>">
+            <a href="<%= item.productUrl %>" target="=_blank">See More Details</a>
+        </div>
+        <% }); %>
+    </div>
   </body>
 </html>

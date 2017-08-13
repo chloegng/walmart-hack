@@ -15,7 +15,7 @@ var twilio = require('twilio');
 var twilioClient = twilio(twilioAccountSid, twilioAuthToken);
 
 var jarrenNumber = "+19518949217";
-var nickNumber = "+7143315393";
+var nickNumber = "+17143315393";
 
 app.use(express.static(__dirname + '/public'));
 
@@ -69,6 +69,7 @@ app.get('/getItem/:itemKey', function(req, res) {
             item.customerRatingImage = jsonRes.customerRatingImage;
             item.freeShippingOver50Dollars = jsonRes.freeShippingOver50Dollars;
             item.imageEntities = jsonRes.imageEntities;
+            temp.productUrl = jsonRes.productUrl;
 
             res.type('application/json');
             res.send(item);
@@ -123,13 +124,14 @@ function getItems(req, callback) {
               temp.customerRatingImage = item.customerRatingImage;
               temp.freeShippingOver50Dollars = item.freeShippingOver50Dollars;
               temp.imageEntities = item.imageEntities;
-
+              temp.productUrl = item.productUrl;
 
               // function to sendText to registeredUsers on DB
               //if item is beig sold less than msrp, text users that want to know
               if(item.salePrice < item.msrp){
                 var message = item.name + " is selling at " + item.salePrice + " which is less than MSRP of " + item.msrp;
                 sendText(message, jarrenNumber);
+                sendText(message, nickNumber);
               }
 
               items.push(temp);
@@ -168,6 +170,11 @@ function sendText(message, phoneNumber) {
     }).then((message) => console.log(message.sid));
 }
 
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 app.listen(3000, function() {
     console.log('Example app listening on port 3000!')
