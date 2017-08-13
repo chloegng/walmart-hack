@@ -2,6 +2,16 @@
 -----------
 pitch notes:
 
+categories:
+our project is [short one line description]
+we aim to help people save money by letting users find more easily, and instantly notify when things go on sale 
+
+we used their api
+
+
+------------
+How it works:
+
 we call walmart api to get data - fresh data
 - if we had more than just 10 hours, we would save this stuff to mongodb and be able to play with trends
 
@@ -27,17 +37,21 @@ for example, here's two texts of two products that are selling below msrp
 - we could additionally send users a picture of the product and it's rating info it it is > 4 stars 
 - also could send a bit.ly for a link to the product directly
 that could help promote sales 
+- WHATS GREAT?
+- the user doesnt have to download an app or anything, we simply just have them enroll and they get it all via text messages
+-given more time, we could implementt also a chat bot that helps users, they could text their query and our bot would text them back the API and data
+- this can be integrated in the text service and also a web chat bot on the website
 
 ----------
 Technologies used:
-Mongodb
-- phone number registry and what categories they register for 
-ExpressJS
-Node.js
-HTML, CSS, JavaScript 
-Twilio
-and lastly, but not least
-Walmart API
+- Mongodb: phone number registry and what categories they register for 
+- ExpressJS
+- Node.js
+- EJS
+- HTML, CSS, JavaScript 
+- Twilio
+- and lastly, but not least
+- Walmart API
 
 ----------
 Thank you! 
