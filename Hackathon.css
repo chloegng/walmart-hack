@@ -6,6 +6,7 @@ body {
 	float: left;
 }
 .square {
+    border-radius: 25px;
 	width: 50%;
 	background: #D3D3D3;
 	padding-bottom: 30%;
