@@ -1,0 +1,62 @@
+Pitch:
+
+Israel Torres
+Chloe Ng
+Jarren San Jose
+Jeric San Jose
+Nicholas Oliver
+
+
+NICK of Time saves customers money.
+
+what we've found is that The user experience for every major etailer is pretty
+much the same. You click through a bunch of menu options, and hopefully end up
+in the right place before frustration sets in.
+Or you run a search, or another search, and another search... and hope that you
+get the results that you need, when you need them.
+
+Sometimes, you know exactly what you want, but you won't buy it until you know
+that you're getting the best deal. You're willing to wait.
+
+For Wal-Mart to engage with the customer and encourage purchases, they would
+offer steep discounts for a limited time on a limited supply of items. This
+encourages a customer to act quickly.
+
+We have integrated text notifications for user -- so if you want to
+subscribe for deals on a specific item or even an item category, we will send
+you a text message . . . but, you have to act fast! The text comes with a time
+limit and how much of the item Wal-Mart has in stock.
+All you have to do to have the item purchased and shipped to your house is
+confirm via text, or through a link back to the website.
+
+So, let's say you want to buy a new laptop and you're willing to spend $800.
+You can sign up for the item category at that price point, and then when a great
+deal comes through you get your notification and then the race is on to reply
+and finish your purchase.
+
+How are we doing this?
+We're partnering with Wal-Mart to scrape historical price data for items, and
+providing these data points over graphs. This helps the customer see if, or how
+often an item goes on sale - and when it goes on sale, how low does it go?
+
+We're integrating twilio to provide text notifications and interaction while the
+user is off the website.
+
+We would like to track item traffic (click counts, cart entries, wishlists/saved
+items) to encourage Wal-Mart to offer items that have high traffic, but not
+necessarily high purchase rates, for discount through N.I.C.K. of Time.
+
+
+To simplify the shopping experience, we've streamlined the user interface so that
+the  experience is efficient, without losing any important information.
+All that we're listing is ten items on their own product cards, with their:
+-the name
+-price
+-a short description
+-and the customer rating
+
+We built this using:
+-MongoDB for the phone number registry
+-EJS for our front end
+-Express and Node for the backend
+-as well as HTML, CSS
