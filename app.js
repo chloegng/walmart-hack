@@ -170,7 +170,7 @@ function sendText(message, phoneNumber) {
     twilioClient.messages.create({
         body: message,
         to: phoneNumber,
-        from: '+18582810718'
+        from: '+18582810718' // twilio phone number
     }).then((message) => console.log(message.sid));
 }
 

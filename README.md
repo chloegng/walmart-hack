@@ -35,25 +35,24 @@ for example, here's two texts of two products that are selling below msrp
 - every time product in that catergory drops below msrp
 - text users registered to that "[product] is selling below msrp at $[price]"
 - we could additionally send users a picture of the product and it's rating info it it is > 4 stars 
-- also could send a bit.ly for a link to the product directly
+- also could send a bit.ly for a link to the product directly, we could do flash sales and NICK OF TIME
 that could help promote sales 
 - WHATS GREAT?
 - the user doesnt have to download an app or anything, we simply just have them enroll and they get it all via text messages
--given more time, we could implementt also a chat bot that helps users, they could text their query and our bot would text them back the API and data
+-given more time, we could implementt also a chat bot that helps users, they could text their query and our bot would text them back info from the API
 - this can be integrated in the text service and also a web chat bot on the website
 
 
 PITCH WE BELEIVE INFORMATION AND RESEARCH IS REALLY IMPORTANT
 WITH THIS, we provide the user a plethora of information easily accessible
 and this helps promote smart decisions(buying things at a good price)
- and user to save money and 
+ and user to save money 
 
 END PRESENTAITON STRONG 
 
 THANK YOU
 ----------
 Technologies used:
-- Mongodb: phone number registry and what categories they register for 
 - ExpressJS
 - Node.js
 - EJS
