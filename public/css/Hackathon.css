@@ -7,8 +7,10 @@ body {
 }
 .square {
 	width: 50%;
-	background: #0;
-	padding-bottom: 30%;
+	background: white;
+	padding-bottom: 15%;
+	padding-left: 5%;
+	padding-right: 5%;
 	margin: 1.66% auto;
 }
 
@@ -16,6 +18,7 @@ body {
 	font-family: "roboto", sans-serif;
 	font-size: 30px;
 	font-style: normal;
+	font-weight: bold;
 }
 
 .salePrice {
@@ -24,20 +27,24 @@ body {
 }
 
 .mediumImage {
+	margin-left: 0px;
+	overflow: auto;
 	float: left;
 
 }
 .customerRatingImage {
-	float: none;
+	float: left;
 }
 
 .shortDescription{
 	font-family: "roboto",sans-serif;
 	font-size: 12px;
+	overflow: auto;
 
 }
 
-.review {
+.reviewInfo {
+	font-weight: bold;
 	font-family: "roboto";
 	font-size: 12px;
 }
