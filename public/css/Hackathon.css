@@ -6,7 +6,7 @@ body {
 	float: left;
 }
 
-header {
+header, footer {
 	background-color: white;
   margin-bottom: 20px;
 }
@@ -14,24 +14,24 @@ header {
 .square {
 	width: 50%;
 	background: white;
-	padding-bottom: 50px;
+	padding-bottom: 15px;
 	padding-left: 20px;
 	padding-right: 5%;
 	margin: 0px auto 10px auto;
 	border-radius: 15px;
-	padding-top: 2px;
+	padding-top: 15px;
 }
 
 .productName {
-	font-family: "roboto", sans-serif;
-	font-size: 30px;
+	font-family: "Roboto",sans-serif;
+	font-size: 25px;
 	font-style: normal;
 	font-weight: bold;
 }
 
 .salePrice {
 	font-size: 25px;
-
+	font-family: "Roboto",sans-serif;
 }
 
 .mediumImage {
@@ -45,7 +45,7 @@ header {
 }
 
 .shortDescription{
-	font-family: "roboto",sans-serif;
+	font-family: "Roboto",sans-serif;
 	font-size: 12px;
 	overflow: auto;
 
@@ -53,7 +53,7 @@ header {
 
 .reviewInfo {
 	font-weight: bold;
-	font-family: "roboto";
+	font-family: "Roboto",sans-serif;
 	font-size: 12px;
 }
 

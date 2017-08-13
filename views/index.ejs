@@ -5,8 +5,7 @@
   </head>
   <body>
     <header>
-      <img src="https://lh3.googleusercontent.com/-MSD8ikYtjSw/WY-qgUtYBqI/AAAAAAAAASE/3R9IbgCRCx0p6rSrV6ElAjoOaxeL3cLGACL0BGAYYCw/h501/logonick_01.jpg" alt="N.I.C.K. Logo" style="height: 250; margin: auto; display: block;"/>
-      <!-- <img src="https://lh3.googleusercontent.com/-Zn4kkZr3Ge0/WY-MNqqS8pI/AAAAAAAAAQo/GWg0cxQkA_sG_FYYZ_6F10DBqFfOSn4AwCK8BGAs/s360/nick.gif" alt="Team N.I.C.K." style="width: 50; height: 50;"/> -->
+      <img src="css/nickcolor.png" alt="N.I.C.K. Logo" style="height: 250; margin: auto; display: block;"/>
       <form action="/" method="get">
         <input type="text" id="myInput" name="query" placeholder="Search for Categories...">
       </form>
@@ -25,19 +24,20 @@
     <div id="container">
         <% items.forEach(function(item) { %>
   		  <div class="square">
+            <img class="mediumImage" src="<%= item.mediumImage %>">
             <h1 class="productName"><%= item.name %> </h1>
-            <h2 class="salePrice">$<%= item.salePrice %></h2>
-            <img class="mediumImage" src="<%= item.thumbnailImage %>">
-            <p class= "shortDescription"><%= item.shortDescription %></p>
-            <p class="reviewInfo">
-                Number of Reviews </br> <%= item.numReviews %>
-            </br>
-                Customer Rating </br> <%= item.customerRating %>
+            <p>
+              <strong>$<%= item.salePrice %></strong><br/><br/>
+              <%= item.shortDescription %><br/><br/>
+              <span class="reviewInfo">Number of Reviews: <%= item.numReviews %> Customer Rating: <%= item.customerRating %></span>
             </p>
             <img class="customerRatingImage" src="<%= item.customerRatingImage %>">
             <a href="<%= item.productUrl %>" target="=_blank">See More Details</a>
         </div>
         <% }); %>
     </div>
+    <footer>
+      <img src="https://lh3.googleusercontent.com/-Zn4kkZr3Ge0/WY-MNqqS8pI/AAAAAAAAAQo/GWg0cxQkA_sG_FYYZ_6F10DBqFfOSn4AwCK8BGAs/s360/nick.gif" alt="N.I.C.K. Logo" style="height: 250; margin: auto; display: block;"/>
+    </footer>
   </body>
 </html>
