@@ -36,6 +36,10 @@ app.get('/', function(req, res) {
         }
     };
 
+    if(typeof req.param('query') != 'undefined') {
+      options.params.query = (req.param('query') + "").toLowerCase();
+    }
+
     getItems(options, function(jsonRes) {
         res.render('index', {
             items: jsonRes.items
@@ -99,7 +103,7 @@ function getItems(req, callback) {
 
     var options = {
       host: walmartAPI,
-      path: encodeURI("/v1/search?apiKey=" + apiKey + "&categoryId=" + categoryId + "&sort=" + sort + "&query=" + query + "&facet=on&facet.range=price:[100 TO 500]")
+      path: encodeURI("/v1/search?apiKey=" + apiKey + "&categoryId=" + categoryId + "&sort=" + sort + "&query=" + query + "&facet=on&facet.range=price:[50 TO 100]")
     };
 
     // Grabbing the shortened description from walmartAPI
@@ -136,8 +140,8 @@ function getItems(req, callback) {
               //if item is beig sold less than msrp, text users that want to know
               if(item.salePrice < item.msrp){
                 var message = item.name + " is selling at " + item.salePrice + " which is less than MSRP of " + item.msrp;
-                sendText(message, jarrenNumber);
-                sendText(message, nickNumber);
+                //sendText(message, jarrenNumber);
+                //sendText(message, nickNumber);
               }
 
               items.push(temp);
