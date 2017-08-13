@@ -42,6 +42,11 @@ that could help promote sales
 -given more time, we could implementt also a chat bot that helps users, they could text their query and our bot would text them back the API and data
 - this can be integrated in the text service and also a web chat bot on the website
 
+
+PITHC WE BELEIVE INFORMATION AND RESEARCH IS REALLY IMPORTANT
+WITH THIS, we provide the user a plethora of information easily accessible
+and this helps promote smart decisions(buying things at a good price)
+ and user to save money and 
 ----------
 Technologies used:
 - Mongodb: phone number registry and what categories they register for 
