@@ -1,8 +1,9 @@
-const express = require('express')
-const app = express()
-const apiKey = "rbrurt3zgvpzkd2gtxhprat5"
-const walmartAPI = "api.walmartlabs.com"
-const http = require('http')
+const express = require('express');
+const http = require('http');
+const app = express();
+
+const apiKey = "rbrurt3zgvpzkd2gtxhprat5";
+const walmartAPI = "api.walmartlabs.com";
 
 
 var twilio = require('twilio');
@@ -25,9 +26,9 @@ app.get('/', function(req, res) {
         "params": {
             "categoryId": 3944,
             "sort": "price",
-            "query": "iPod"
+            "query": "printer"
         }
-    }
+    };
 
     getItems(options, function(jsonRes) {
         res.render('index', {
@@ -41,7 +42,7 @@ app.get('/getItem/:itemKey', function(req, res) {
     var options = {
         host: walmartAPI,
         path: encodeURI("/v1/items/" + req.params.itemKey + "?apiKey=" + apiKey + "&format=json")
-    }
+    };
 
     var request = http.get(options, function(response) {
         var bodyChunks = [];
@@ -71,10 +72,9 @@ app.get('/getItem/:itemKey', function(req, res) {
 
             res.type('application/json');
             res.send(item);
-        })
-
-    })
-})
+        });
+    });
+});
 
 // Get array of items
 app.get('/getItems/:categoryId/:sort/:query', function(req, res) {
@@ -82,7 +82,7 @@ app.get('/getItems/:categoryId/:sort/:query', function(req, res) {
         res.type('application/json');
         res.send(jsonRes);
     });
-})
+});
 
 // getItems callback function
 function getItems(req, callback) {
@@ -93,7 +93,7 @@ function getItems(req, callback) {
     var options = {
       host: walmartAPI,
       path: encodeURI("/v1/search?apiKey=" + apiKey + "&categoryId=" + categoryId + "&sort=" + sort + "&query=" + query + "&facet=on&facet.range=price:[100 TO 500]")
-    }
+    };
 
     // Grabbing the shortened description from walmartAPI
     var request = http.get(options, function(response) {
@@ -112,7 +112,7 @@ function getItems(req, callback) {
               temp.name = item.name;
               temp.salePrice = item.salePrice;
               temp.msrp = item.msrp;
-              temp.shortDescription = cleanDescription(item.shortDescription);
+              temp.shortDescription = cleanDescription(item.shortDescription) ;
               temp.brandName = item.brandName;
               temp.thumbnailImage = item.thumbnailImage;
               temp.mediumImage = item.mediumImage;
@@ -143,12 +143,14 @@ function getItems(req, callback) {
 }
 
 function cleanDescription(desc) {
-  if(typeof desc != 'undefined' && desc != null && desc.length > 0) {
-    desc = desc.replace('&lt;p&gt;', '');
-    desc = desc.replace('&lt;/p&gt;', '');
+  if(typeof desc != 'undefined') {
+    if(desc.length > 0) {
+      desc = desc.replace('&lt;p&gt;', '');
+      desc = desc.replace('&lt;/p&gt;', '');
 
-    if(desc.length > 120) {
-      desc = desc.substring(0, 116) + '...';
+      if(desc.length > 300) {
+        desc = desc.substring(0, 296) + '...';
+      }
     }
   } else {
     desc = "No Description Available";
@@ -157,8 +159,7 @@ function cleanDescription(desc) {
   return desc;
 }
 
-function sendText(message, phoneNumber)
-{
+function sendText(message, phoneNumber) {
     twilioClient.messages.create({
         body: message,
         to: phoneNumber,
@@ -169,4 +170,4 @@ function sendText(message, phoneNumber)
 
 app.listen(3000, function() {
     console.log('Example app listening on port 3000!')
-})
+});
