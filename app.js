@@ -4,6 +4,12 @@ const apiKey = "rbrurt3zgvpzkd2gtxhprat5"
 const walmartAPI = "api.walmartlabs.com"
 const http = require('http')
 
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/phoneNumbers');
+// schema for users that want text notifications when price drops below msrp
+// name
+// number
+// category they want to be enrolled in 
 
 var twilio = require('twilio');
 
