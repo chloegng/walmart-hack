@@ -43,10 +43,14 @@ that could help promote sales
 - this can be integrated in the text service and also a web chat bot on the website
 
 
-PITHC WE BELEIVE INFORMATION AND RESEARCH IS REALLY IMPORTANT
+PITCH WE BELEIVE INFORMATION AND RESEARCH IS REALLY IMPORTANT
 WITH THIS, we provide the user a plethora of information easily accessible
 and this helps promote smart decisions(buying things at a good price)
  and user to save money and 
+
+END PRESENTAITON STRONG 
+
+THANK YOU
 ----------
 Technologies used:
 - Mongodb: phone number registry and what categories they register for 
